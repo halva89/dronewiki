@@ -2,3 +2,4 @@
 127.0.0.1 - - [30/Oct/2026 19:07:51] "GET /css/style.css HTTP/1.1" 200 -
 127.0.0.1 - - [30/Oct/2026 19:07:51] "GET /js/app.js HTTP/1.1" 200 -
 127.0.0.1 - - [30/Oct/2026 19:07:51] "GET /data/catalog.js HTTP/1.1" 200 -
+127.0.0.1 - - [30/Oct/2026 19:08:26] "GET /index.html HTTP/1.1" 200 -
