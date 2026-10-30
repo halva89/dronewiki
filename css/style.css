@@ -1,0 +1,117 @@
+:root {
+  --bg: #0f1420;
+  --panel: #171e2e;
+  --panel-2: #1e2740;
+  --accent: #35c4dc;
+  --accent-2: #ff8a3d;
+  --text: #e8edf6;
+  --muted: #93a0b8;
+  --border: #2a3554;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; gap: 10px;
+}
+.logo { font-size: 1.4rem; font-weight: 700; color: var(--text); text-decoration: none; }
+.logo span { color: var(--accent); }
+.main-nav a {
+  color: var(--muted); text-decoration: none; margin-left: 16px;
+  padding: 6px 10px; border-radius: 8px; transition: .15s;
+}
+.main-nav a:hover, .main-nav a.active { color: var(--text); background: var(--panel-2); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, #14203a, #0f2b38);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px; margin: 24px 0;
+}
+.hero h1 { margin: 0 0 8px; font-size: 1.9rem; }
+.hero p { margin: 0; color: var(--muted); max-width: 720px; }
+
+/* ---------- Cards / grids ---------- */
+.grid { display: grid; gap: 16px; margin: 20px 0; }
+.grid.cols-3 { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.grid.cols-2 { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  transition: transform .12s, border-color .12s;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.card h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.card .sub { color: var(--muted); font-size: .9rem; margin-bottom: 10px; }
+.card a.more { color: var(--accent); text-decoration: none; font-size: .9rem; }
+
+.badge {
+  display: inline-block; padding: 2px 10px; margin: 2px 4px 2px 0;
+  border-radius: 999px; font-size: .78rem;
+  background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+}
+.badge.size { border-color: var(--accent); color: var(--accent); }
+.badge.brand { border-color: var(--accent-2); color: var(--accent-2); }
+
+/* ---------- Drone detail table ---------- */
+.spec-table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+.spec-table th, .spec-table td {
+  text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.spec-table th { color: var(--muted); font-weight: 600; width: 180px; white-space: nowrap; }
+
+/* ---------- Filters ---------- */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.chip {
+  background: var(--panel); border: 1px solid var(--border); color: var(--muted);
+  padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: .88rem;
+}
+.chip.active, .chip:hover { border-color: var(--accent); color: var(--text); background: var(--panel-2); }
+
+input[type="search"] {
+  width: 100%; max-width: 420px; padding: 10px 14px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); font-size: 1rem; margin: 10px 0;
+}
+
+/* ---------- Breadcrumbs & headings ---------- */
+.breadcrumbs { color: var(--muted); font-size: .9rem; margin-top: 20px; }
+.breadcrumbs a { color: var(--accent); text-decoration: none; }
+h2.section-title { border-left: 4px solid var(--accent); padding-left: 10px; margin-top: 26px; }
+
+.empty { color: var(--muted); font-style: italic; padding: 20px 0; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px; padding: 20px 0; color: var(--muted); font-size: .85rem;
+}
+code { background: var(--panel-2); padding: 2px 6px; border-radius: 6px; }
+
+@media (max-width: 640px) {
+  .hero { padding: 22px 18px; }
+  .spec-table th { width: 120px; }
+}
